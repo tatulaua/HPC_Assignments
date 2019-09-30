@@ -1,0 +1,6 @@
+import os
+import multiprocessing
+
+os.chdir('/home/unimind/Documents/Classes/HPC/HW/')
+from multiprocessing import Process
+Process(target=shutil.copytree, args=['src', 'dst']).start()

@@ -1,0 +1,6 @@
+import os
+import shutil
+
+os.chdir('/home/unimind/Classes/HPC/HW/')
+Thread(target=shutil.copyTree, args=['/src', '/dst']).start()
+

@@ -1,0 +1,17 @@
+import os
+import shutil
+
+def copyDir(src, dst, symLinks=False, ignore=None):
+    for item in os.listdir(src):
+        s=os.path.join(src, item)
+        d=os.path.join(dst, item)
+        if os.path.isdir(s):
+            shutil.copytree(s, d, symlinks, ignore)
+        else:
+            shutil.copy2(s, d)
+           
+def main():
+    source="/home/unimind/Documents/Classes/HPC/HW/src"
+    dest="/home/unimind/Documents/Classes/HPC/HW/dst"
+
+    copyDir(source, dest)
